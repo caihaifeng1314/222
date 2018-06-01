@@ -1,0 +1,56 @@
+1.查看内核    IP/MAC ifconfig  CPU 内存
+uname -r  ifconfig  lscup  cat /proc/meminfo
+2.查看主机名   永久修改主机名修改哪个配置文件？
+hostname  /etc/hostname
+3.MBR分区表最多可以多少主分区？多少逻辑分区？多少扩展分区？
+4个主分区  无数个逻辑分区  一个扩展分区
+4.命令的一般格式：基本用法？
+命令字   选项  参数 。。
+5.终止当前命令操作快捷键是？
+Ctrl +c
+6.查看/etc/下以.conf结尾 （不包括子目录）
+ls /etc/*.conf
+7.查看/root/目录本身的权限并以长格式显示
+ls -ld /root/
+8.递归创建目录命令是？递归查看显示命令是？
+mkdir -p    ls -R
+9.复制一个目录 要求保留权限并且连着子目录全部的命令是？
+cp -rp
+10.默写yum 配置文件存放路径 命名规则 配置文件内容及解释？
+/etc/yum.repos.d/*.repo
+[sss]		-仓库标识(具有唯一性)
+name=		-仓库信息
+baseurl=		-软件仓库访问地址
+enabled=		-是否启用(0是关闭，1是开启)
+gpgcheck=	-是否启用签名检查
+11.创建用户sili 指定UID为2228 登录shell /bin/nologin 家目录为/data/sili
+useradd -u 2228 -s /bin/nologin   -d /data/sili   sili
+12.非交互模式为sili创建密码 lisi
+echo "lisi" | passwd --stdin sili
+13。创建用户组nsd1709，并且修改sili的附加组为nsd1709
+groupadd nsd1709   ; usermod -G nsd1709  sili
+14.简述下列 ：权限，所属者，所属组，是什么类型？（文件还是目录）
+-rwxrw-r-- . 1 root root 1618 1月  10 2017 ******
+权限是  	所属者：读 写 执行
+                所属组：读写
+                其他人:读
+所属者是：root  所属组：是root
+类型是：文件
+15.修改权限的命令是？修改所属组的命令式？递归是什么选项
+chmod  chown  -R
+16.除了基本权限，现在已知还有两种什么权限？
+acl权限  附件权限
+17.分区之后识别新分区表命令是？
+partprobe  
+18.常用的格式化命令是？ext4  xfs swap
+mkfs.ext4   mkfs.xfs  mkswap
+19.开机自动挂载文件是？内容格式是？
+/etc/fstab   
+设备路径 挂载点 类型 参数  备份标记 检测顺序
+20.NTP客户端软件包及配置文件路径。
+chrony	/etc/chrony.conf
+21.编写周期性计划任务命令是什么？时间格式是？
+crontab -e
+分 时 日  月  周
+自行复习下面内容：
+tar  grep  find  nmcli网络配置  LVM 
